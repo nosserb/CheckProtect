@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Analyse rapide et accessible des messages, liens et numéros suspects — résultats clairs et recommandations actionnables." />
+    <title>CheckProtect</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+
+    <!-- Header / Navigation -->
+    <header class="header" role="banner">
+      <div class="container navbar-container">
+        <div class="navbar-logo">
+          <span class="logo-text">CheckProtect</span>
+        </div>
+
+        <nav aria-label="Navigation principale">
+          <ul class="nav-menu">
+            <li><a class="nav-link" href="#about">À propos</a></li>
+            <li><a class="nav-link" href="#scan">Scanner</a></li>
+            <li><a class="nav-link nav-contact" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main id="main">
+
+      <!-- Hero / Scanner overview -->
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero-grid">
+
+            <!-- Intro -->
+            <div class="hero-content">
+              <p class="about-label">Outil de sécurité</p>
+              <h1 id="hero-title">Protégez-vous des arnaques — simple et rapide</h1>
+              <p class="lead">Collez un message, un lien, un e-mail ou un numéro pour obtenir un score de risque clair, des indices détectés et des recommandations pratiques. Aucun compte requis.</p>
+
+              <div class="cta-row">
+                <a class="btn btn-primary" href="#scan">Analyser maintenant</a>
+                <a class="btn btn-light" href="#about">En savoir plus</a>
+              </div>
+            </div>
+
+            <!-- Scanner card -->
+            <aside class="hero-card" aria-labelledby="scan-heading">
+              <h2 id="scan-heading">Scanner</h2>
+
+              <form class="scan-area" onsubmit="event.preventDefault(); analyser();">
+                <label for="input" class="sr-only">Contenu à analyser</label>
+                <textarea id="input" name="input" placeholder="Collez le texte suspect ici..." aria-label="Contenu à analyser"></textarea>
+
+                <div class="controls">
+                  <button type="submit" class="btn btn-primary">Analyser</button>
+                  <button type="button" class="btn btn-outline" onclick="clearAll()">Effacer</button>
+                </div>
+
+                <div id="output" class="result" aria-live="polite" hidden>
+                  <div class="risk">
+                    <div class="meter" id="score">--</div>
+                    <div class="risk-body">
+                      <div id="verdict" class="verdict">—</div>
+                      <div id="short" class="explain">Aucun résultat pour l'instant.</div>
+                    </div>
+                  </div>
+
+                  <div id="details" class="explain" aria-hidden="false"></div>
+                  <div id="advice" class="advice"></div>
+                </div>
+              </form>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- About / Description -->
+      <section id="about" class="about-section container" aria-labelledby="about-heading">
+        <h2 id="about-heading">Anti-Arnaque Scanner — Description</h2>
+        <p class="section-subtitle">Anti-Arnaque Scanner est un outil conçu pour aider tout le monde à évaluer rapidement le risque d'une communication suspecte. Il combine des règles explicites et des conseils actionnables pour réduire la confusion et permettre des décisions sûres.</p>
+
+        <div class="features-grid" role="list">
+          <div class="feature-card" role="listitem">
+            <h3>Résultats clairs</h3>
+            <p>Score lisible et explications simples pour chaque alerte détectée.</p>
+          </div>
+
+          <div class="feature-card" role="listitem">
+            <h3>Conseils pratiques</h3>
+            <p>Actions recommandées : ignorer, bloquer, signaler.</p>
+          </div>
+
+          <div class="feature-card" role="listitem">
+            <h3>Accessible</h3>
+            <p>Interface épurée, sans jargon et sans besoin de compte.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="container contact-section" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <p class="explain">Pour suggestions ou signalement : <strong>contact@checkprotect.local</strong></p>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="container footer-content">
+        <div>
+          <strong>CheckProtect</strong> — Anti-Arnaque Scanner • Gratuit • Aucun compte
+        </div>
+        <div class="footer-note">Outil indicatif — ne remplace pas une enquête professionnelle.</div>
+      </div>
+    </footer>    
+  </body>
+</html>
