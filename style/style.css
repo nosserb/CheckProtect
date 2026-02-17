@@ -1,0 +1,104 @@
+                                                                                                                                                
+/*  ,ad8888ba,   88                                   88            88888888ba                                                                    */
+/* d8"'    `"8b  88                                   88            88      "8b                            ,d                              ,d     */
+/*d8'            88                                   88            88      ,8P                            88                              88     */
+/*88             88,dPPYba,    ,adPPYba,   ,adPPYba,  88   ,d8      88aaaaaa8P'  8b,dPPYba,   ,adPPYba,  MM88MMM  ,adPPYba,   ,adPPYba,  MM88MMM  */
+/*88             88P'    "8a  a8P_____88  a8"     ""  88 ,a8"       88""""""'    88P'   "Y8  a8"     "8a   88    a8P_____88  a8"     ""    88     */
+/*Y8,            88       88  8PP"""""""  8b          8888[         88           88          8b       d8   88    8PP"""""""  8b            88     */
+/* Y8a.    .a8P  88       88  "8b,   ,aa  "8a,   ,aa  88`"Yba,      88           88          "8a,   ,a8"   88,   "8b,   ,aa  "8a,   ,aa    88,    */
+/*  `"Y8888Y"'   88       88   `"Ybbd8"'   `"Ybbd8"'  88   `Y8a     88           88           `"YbbdP"'    "Y888  `"Ybbd8"'   `"Ybbd8"'    "Y888  */
+                                                                                                                                                
+                                                                                                                                                
+
+:root {
+	/* Colors */
+	--bg: #0a0a0a;
+	--panel: #0b1220;
+	--text: #ffffff;
+	--muted: #9ca3af;
+	--accent: #0a66c2;
+	--accent-2: #00d4ff;
+	--good: #10b981;
+	--warn: #f59e0b;
+	--bad: #ef4444;
+
+	/* UI tokens */
+	--glass: rgba(255, 255, 255, 0.03);
+	--radius: 12px;
+	--container: 1100px;
+	--font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	margin: 0;
+	font-family: var(--font);
+	color: var(--text);
+	background: radial-gradient(circle at 20% 20%, rgba(10, 102, 194, 0.06), transparent 25%), var(--bg);
+}
+
+.container {
+	max-width: var(--container);
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+.header {
+	padding: 20px 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+	position: sticky;
+	top: 0;
+	background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.03));
+	z-index: 40;
+}
+
+.navbar-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.navbar-logo {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	font-weight: 700;
+}
+
+.logo-icon {
+	font-size: 22px;
+}
+
+.nav-menu {
+	list-style: none;
+	display: flex;
+	gap: 20px;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-link {
+	color: var(--muted);
+	text-decoration: none;
+	padding: 8px 12px;
+	border-radius: 999px;
+}
+
+.nav-link:hover {
+	color: var(--text);
+}
+
+.nav-contact {
+	border: 1px solid var(--glass);
+	padding: 8px 16px;
+}
