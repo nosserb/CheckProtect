@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Présentation complète de CheckProtect : mission, fonctionnement, limites et bonnes pratiques de sécurité." />
+    <title>À propos — CheckProtect</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header" role="banner">
+      <div class="container navbar-container">
+        <div class="navbar-logo">
+          <span class="logo-text">CheckProtect</span>
+        </div>
+
+        <nav aria-label="Navigation principale">
+          <ul class="nav-menu">
+            <li><a class="nav-link" href="index.html">Accueil</a></li>
+            <li><a class="nav-link" href="index.html#scan">Scanner</a></li>
+            <li><a class="nav-link" href="index.html#signalement">Signaler</a></li>
+            <li><a class="nav-link nav-contact" href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container about-page" id="main">
+      <section class="about-intro" aria-labelledby="about-title">
+        <p class="about-label">Présentation du projet</p>
+        <h1 id="about-title">CheckProtect, un assistant simple pour repérer les arnaques en ligne</h1>
+        <p class="section-subtitle">
+          CheckProtect aide à évaluer rapidement le risque d'un message, d'un e-mail ou d'un lien.
+          L'objectif est d'offrir un premier niveau d'alerte compréhensible, avec des signes concrets et des actions immédiates à appliquer.
+        </p>
+      </section>
+
+      <section class="about-section" aria-labelledby="mission-title">
+        <h2 id="mission-title">Notre mission</h2>
+        <div class="features-grid" role="list">
+          <article class="feature-card" role="listitem">
+            <h3>Prévenir</h3>
+            <p>Réduire les risques de clic, d'appel ou de partage d'informations face à des messages suspects.</p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <h3>Expliquer</h3>
+            <p>Montrer clairement pourquoi un contenu est suspect grâce à une liste de signes détectés.</p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <h3>Orienter</h3>
+            <p>Donner des recommandations immédiates : vérifier via les canaux officiels, bloquer et signaler.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="how-title">
+        <h2 id="how-title">Comment fonctionne l'analyse</h2>
+        <div class="features-grid" role="list">
+          <article class="feature-card" role="listitem">
+            <h3>Analyse du texte</h3>
+            <p>Détection de pression, urgence, faux scénarios de paiement/virement et formulations manipulatrices.</p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <h3>Analyse des liens</h3>
+            <p>Contrôle des redirections cachées, tokens suspects, domaines douteux et combinaisons critiques de phishing.</p>
+          </article>
+          <article class="feature-card" role="listitem">
+            <h3>Analyse des expéditeurs</h3>
+            <p>Extraction des e-mails détectés et vérification des incohérences possibles entre marque citée et domaine réel.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="limits-title">
+        <h2 id="limits-title">Limites et bonnes pratiques</h2>
+        <div class="feature-card">
+          <p>
+            Le score fourni est un indicateur d'aide à la décision. Même un score modéré peut cacher une arnaque.
+            En cas de doute, ne répondez pas, ne cliquez pas, et contactez l'organisme concerné uniquement via ses coordonnées officielles.
+          </p>
+          <p>
+            Pour contribuer à la lutte contre les campagnes frauduleuses, utilisez les plateformes de signalement disponibles sur la page d'accueil.
+          </p>
+        </div>
+      </section>
+
+      <section class="about-section" aria-labelledby="sources-title">
+        <h2 id="sources-title">Sources fiables utilisées</h2>
+        <div class="feature-card">
+          <p>
+            Les patterns de détection sont construits à partir de tendances observées et d'exemples publiés par des organismes reconnus,
+            afin d'améliorer la pertinence des alertes.
+          </p>
+          <ul>
+            <li><a class="platform-link" href="https://phishstats.info" target="_blank" rel="noopener noreferrer">phishstats.info</a></li>
+            <li><a class="platform-link" href="https://www.signal-spam.fr" target="_blank" rel="noopener noreferrer">signal-spam.fr</a></li>
+            <li><a class="platform-link" href="https://www.cybermalveillance.gouv.fr" target="_blank" rel="noopener noreferrer">cybermalveillance.gouv.fr</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="about-actions">
+        <a class="btn btn-primary" href="index.html#scan">Analyser un message</a>
+        <a class="btn btn-light" href="index.html#signalement">Voir les plateformes de signalement</a>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container footer-content">
+        <div>
+          <strong>CheckProtect</strong> — Anti-Arnaque Scanner • Gratuit • Aucun compte
+        </div>
+        <div class="footer-note">Outil indicatif — ne remplace pas une enquête professionnelle.</div>
+      </div>
+    </footer>
+
+    <script src="particles.js" defer></script>
+  </body>
+</html>

@@ -31,8 +31,9 @@
 
         <nav aria-label="Navigation principale">
           <ul class="nav-menu">
-            <li><a class="nav-link" href="#about">À propos</a></li>
+            <li><a class="nav-link" href="about.html">À propos</a></li>
             <li><a class="nav-link" href="#scan">Scanner</a></li>
+            <li><a class="nav-link" href="#signalement">Signaler</a></li>
             <li><a class="nav-link nav-contact" href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -55,7 +56,7 @@
 
               <div class="cta-row">
                 <a class="btn btn-primary" href="#scan">Analyser maintenant</a>
-                <a class="btn btn-light" href="#about">En savoir plus</a>
+                <a class="btn btn-light" href="about.html">En savoir plus</a>
               </div>
             </div>
 
@@ -90,27 +91,31 @@
         </div>
       </section>
 
-      <!-- About / Description -->
-      <section id="about" class="about-section container" aria-labelledby="about-heading">
-        <h2 id="about-heading">Anti-Arnaque Scanner — Description</h2>
-        <p class="section-subtitle">Anti-Arnaque Scanner est un outil conçu pour aider tout le monde à évaluer rapidement le risque d'une communication suspecte. Il combine des règles explicites et des conseils actionnables pour réduire la confusion et permettre des décisions sûres.</p>
+      <section id="signalement" class="platform-section container" aria-labelledby="signalement-heading">
+        <h2 id="signalement-heading">Vous faites face à une arnaque ? Signalez-la</h2>
+        <p class="section-subtitle">Les plateformes de signalement contribuent à la collecte d'exemples réels et aident les acteurs de cybersécurité à mieux identifier les campagnes frauduleuses.</p>
 
         <div class="features-grid" role="list">
-          <div class="feature-card" role="listitem">
-            <h3>Résultats clairs</h3>
-            <p>Score lisible et explications simples pour chaque alerte détectée.</p>
-          </div>
+          <article class="feature-card" role="listitem">
+            <h3>Signal Spam</h3>
+            <p>Plateforme française pour signaler les spams et certains emails de phishing. Les signalements alimentent une base de messages suspects.</p>
+            <a class="platform-link" href="https://www.signal-spam.fr" target="_blank" rel="noopener noreferrer">Accéder à Signal Spam</a>
+          </article>
 
-          <div class="feature-card" role="listitem">
-            <h3>Conseils pratiques</h3>
-            <p>Actions recommandées : ignorer, bloquer, signaler.</p>
-          </div>
+          <article class="feature-card" role="listitem">
+            <h3>Phishing Initiative</h3>
+            <p>Service français/européen qui analyse et référence des URL de phishing. Utile pour repérer les pages frauduleuses actives.</p>
+            <a class="platform-link" href="https://phishing-initiative.eu" target="_blank" rel="noopener noreferrer">Accéder à Phishing Initiative</a>
+          </article>
 
-          <div class="feature-card" role="listitem">
-            <h3>Accessible</h3>
-            <p>Interface épurée, sans jargon et sans besoin de compte.</p>
-          </div>
+          <article class="feature-card" role="listitem">
+            <h3>33700</h3>
+            <p>Dispositif français de signalement des SMS indésirables et smishing. Permet de remonter rapidement les campagnes par SMS.</p>
+            <a class="platform-link" href="https://www.33700.fr" target="_blank" rel="noopener noreferrer">Accéder au 33700</a>
+          </article>
         </div>
+
+        <p class="signal-note">Ces bases sont utiles pour collecter des exemples fiables via extractions ou APIs, plutôt que des dumps textuels bruts.</p>
       </section>
 
       <!-- Contact -->
@@ -131,6 +136,7 @@
       </div>
     </footer>
 
+    <script src="particles.js" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>
