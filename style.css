@@ -136,3 +136,30 @@ h1 {
 	gap: 12px;
 	margin-top: 18px;
 }
+
+.btn {
+	display: inline-block;
+	padding: 10px 18px;
+	border-radius: 999px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.btn-primary {
+	background: var(--text);
+	color: var(--bg);
+}
+
+.btn-light {
+	background: transparent;
+	border: 1px solid var(--glass);
+	color: var(--text);
+}
+
+.btn-outline {
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	color: var(--muted);
+	padding: 8px 12px;
+	border-radius: 8px;
+}
