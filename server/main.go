@@ -8,7 +8,7 @@ import (
 
 func main() {
 	// Chemin vers le dossier du portfolio
-	CheckProtectPath := "../style"
+	CheckProtectPath := ".."
 
 	// Servir les fichiers statiques
 	fs := http.FileServer(http.Dir(CheckProtectPath))
