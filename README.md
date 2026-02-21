@@ -1,12 +1,100 @@
 # CheckProtect
 
-Anti-Arnaque Scanner is a real-time cybersecurity tool designed to help anyone quickly determine whether a message, link, email, or phone number may be part of a scam. The goal of the project is to make online safety simple, accessible, and understandable for non-technical users while still providing meaningful analysis.
+CheckProtect est un scanner anti-arnaque web qui aide à évaluer rapidement un message, une URL, un e-mail ou un numéro suspect.
 
-The application allows users to paste suspicious content into a single interface and instantly receive a risk assessment. The system analyzes multiple indicators commonly found in fraudulent communications, such as urgency tactics, impersonation attempts, suspicious domains, abnormal formatting, or known scam patterns. Based on this analysis, it generates a clear risk score along with an explanation of the detected warning signs.
+Le projet combine :
+- une analyse locale (patterns phishing/smishing),
+- une vérification de réputation URL (proxy PhishStats),
+- des recommandations concrètes (ne pas cliquer, signaler, contacter les canaux officiels).
 
-Beyond detection, the platform focuses on practical guidance. Users are not only informed about potential risks but also receive actionable recommendations, such as whether they should ignore the message, block the sender, report the content, or take additional protective measures. This decision-oriented approach helps reduce panic and empowers users to respond correctly.
+## Aperçu
 
-The project is designed with accessibility in mind: a clean interface, minimal technical jargon, and fast results without requiring account creation. It can be extended with additional modules such as URL reputation checks, phone number intelligence, community reporting, or AI-assisted analysis.
+- **Page d'accueil** : analyse de texte + score de risque + explications.
+- **Page À propos** : mission, fonctionnement, limites, sources fiables.
+- **Page Signaler** : guide complet et plateformes de signalement.
 
-Anti-Arnaque Scanner aims to bridge the gap between professional cybersecurity tools and everyday users by providing a practical, educational, and preventive solution against digital fraud.
+## Fonctionnalités
+
+- Détection de signaux textuels : urgence, pression, faux scénarios bancaires, usurpation.
+- Détection e-mail : domaines suspects, incohérences marque/domaine, domaines jetables.
+- Détection URL avancée :
+	- redirections imbriquées,
+	- paramètres sensibles (`return_url`, `redirect`, `token`, etc.),
+	- tokens longs/haute entropie,
+	- IP dans l’URL,
+	- sous-domaines générés et plateformes fréquemment abusées.
+- Intégration PhishStats via endpoint local : `GET /api/phishstats?host=<domain>`.
+- UI dark + particules de fond discrètes.
+
+## Stack technique
+
+- **Frontend** : HTML, CSS, JavaScript (vanilla)
+- **Backend** : Go (`net/http`)
+- **API externe** : `https://api.phishstats.info/api/phishing` (via proxy serveur)
+
+## Installation et lancement
+
+### Prérequis
+
+- Go 1.20+ (ou version compatible)
+
+### Lancer localement
+
+Depuis le dossier `server` :
+
+```bash
+cd server
+go run main.go
+```
+
+Serveur par défaut :
+
+- `http://localhost:2525`
+
+Port personnalisé :
+
+```bash
+PORT=2526 go run main.go
+```
+
+## Endpoints
+
+- `GET /` : sert les fichiers statiques du projet
+- `GET /api/phishstats?host=example.com` : proxy vers PhishStats
+
+## Sources et fiabilité
+
+Les patterns de détection s’appuient sur des tendances observées et des sources reconnues :
+
+- `phishstats.info`
+- `signal-spam.fr`
+- `cybermalveillance.gouv.fr`
+
+> Le score est un **indicateur d’aide à la décision** et ne remplace pas une analyse forensique complète.
+
+## Limites actuelles
+
+- Heuristiques basées sur règles (pas de modèle ML supervisé).
+- Risque de faux positifs/faux négatifs sur cas limites.
+- Dépendance partielle à la disponibilité de l’API externe.
+
+## Roadmap (idées)
+
+- Historique local des analyses.
+- Export des signalements (format JSON/CSV).
+- Classification par “famille de campagne” plus explicite.
+- Internationalisation (FR/EN).
+
+## Contribution
+
+Les contributions sont bienvenues :
+
+1. Fork du projet
+2. Création d’une branche feature
+3. Commit clair
+4. Pull request avec description des changements
+
+## Licence
+
+Aucune licence explicite n’est encore définie dans ce dépôt.
 

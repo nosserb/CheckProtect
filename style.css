@@ -354,6 +354,11 @@ h1 {
 	padding-bottom: 30px;
 }
 
+.report-page {
+	padding-top: 48px;
+	padding-bottom: 30px;
+}
+
 .about-intro {
 	max-width: 900px;
 	margin: 0 auto 22px;
@@ -368,6 +373,14 @@ h1 {
 	gap: 12px;
 	flex-wrap: wrap;
 	padding: 18px 0 6px;
+}
+
+.steps-list {
+	margin: 0;
+	padding-left: 20px;
+	color: var(--muted);
+	display: grid;
+	gap: 8px;
 }
 
 /* ---------- Footer ---------- */
@@ -385,4 +398,5 @@ h1 {
 	.features-grid { grid-template-columns: 1fr; }
 	.nav-menu { display: none; }
 	.about-page { padding-top: 34px; }
+	.report-page { padding-top: 34px; }
 }
