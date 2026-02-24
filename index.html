@@ -26,7 +26,7 @@
     <header class="header" role="banner">
       <div class="container navbar-container">
         <div class="navbar-logo">
-          <span class="logo-text">CheckProtect</span>
+          <a class="logo-text" href="about.html">CheckProtect</a>
         </div>
 
         <nav aria-label="Navigation principale">
@@ -37,6 +37,22 @@
             <li><a class="nav-link nav-contact" href="#contact">Contact</a></li>
           </ul>
         </nav>
+        <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Activer le mode sombre">
+          <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -60,47 +76,117 @@
               </div>
             </div>
 
-            <!-- Scanner card -->
-            <aside class="hero-card" aria-labelledby="scan-heading">
-              <h2 id="scan-heading">Scanner</h2>
-
-              <form class="scan-area" onsubmit="event.preventDefault(); analyser();">
-                <label for="input" class="sr-only">Contenu à analyser</label>
-                <textarea id="input" name="input" placeholder="Collez le texte suspect ici..." aria-label="Contenu à analyser"></textarea>
-
-                <div class="controls">
-                  <button type="submit" class="btn btn-primary">Analyser</button>
-                  <button type="button" class="btn btn-outline" onclick="clearAll()">Effacer</button>
-                </div>
-
-                <div id="output" class="result" aria-live="polite" hidden>
-                  <div class="risk">
-                    <div class="meter" id="score">--</div>
-                    <div class="risk-body">
-                      <div id="verdict" class="verdict">—</div>
-                      <div id="short" class="explain">Aucun résultat pour l'instant.</div>
-                    </div>
-                  </div>
-
-                  <div id="details" class="explain" aria-hidden="false"></div>
-                  <div id="advice" class="advice"></div>
-                </div>
-              </form>
-            </aside>
           </div>
         </div>
       </section>
 
+      <section id="scan" class="container" aria-labelledby="scan-heading">
+        <aside class="hero-card" aria-labelledby="scan-heading">
+          <h2 id="scan-heading">Scanner</h2>
+
+          <form class="scan-area" onsubmit="event.preventDefault(); analyser();">
+            <label for="input" class="sr-only">Contenu à analyser</label>
+            <textarea id="input" name="input" placeholder="Collez le texte suspect ici..." aria-label="Contenu à analyser"></textarea>
+
+            <div class="controls">
+              <button type="submit" class="btn btn-primary">Analyser</button>
+              <button type="button" class="btn btn-outline" onclick="clearAll()">Effacer</button>
+            </div>
+
+            <div id="output" class="result" aria-live="polite" hidden>
+              <div class="risk">
+                <div class="meter" id="score">--</div>
+                <div class="risk-body">
+                  <div id="verdict" class="verdict">—</div>
+                  <div id="short" class="explain">Aucun résultat pour l'instant.</div>
+                </div>
+              </div>
+
+              <div id="details" class="explain" aria-hidden="false"></div>
+              <div id="advice" class="advice"></div>
+            </div>
+          </form>
+        </aside>
+      </section>
+
+      <section class="container home-cards" aria-label="Points clés">
+        <div class="home-cards-grid">
+          <article class="home-card">
+            <h3>Analyse immédiate</h3>
+            <p>Collez un message ou un lien et obtenez un niveau de risque lisible en quelques secondes.</p>
+          </article>
+          <article class="home-card">
+            <h3>Indices expliqués</h3>
+            <p>Chaque alerte est détaillée pour comprendre rapidement pourquoi le contenu semble suspect.</p>
+          </article>
+          <article class="home-card">
+            <h3>Actions concrètes</h3>
+            <p>Des recommandations simples pour éviter l'erreur : vérifier, bloquer et signaler.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="stats-section" aria-labelledby="stats-heading">
+        <div class="container">
+          <h2 id="stats-heading">La réalité des arnaques numériques</h2>
+          <div class="stats-grid">
+            <article class="stat-card stat-card-critical">
+              <p class="stat-value stat-value-critical">+1 M</p>
+              <p class="stat-label">de <span class="critical-text">fraudes signalées</span> chaque année en France</p>
+            </article>
+            <article class="stat-card stat-card-critical">
+              <p class="stat-value">SMS + Email</p>
+              <p class="stat-label">restent les vecteurs les plus <span class="critical-text">fréquents</span></p>
+            </article>
+            <article class="stat-card stat-card-critical">
+              <p class="stat-value">Quelques secondes</p>
+              <p class="stat-label">suffisent pour déclencher une usurpation après un clic</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="container bank-warning" aria-labelledby="bank-warning-title">
+        <h2 id="bank-warning-title">Alerte importante</h2>
+        <p>
+          <span class="critical-text">Une banque ne vous demandera jamais vos informations bancaires complètes</span>,
+          même au téléphone. Si cela arrive et que vous avez un doute,
+          <span class="critical-text">raccrochez puis rappelez votre banque via son numéro officiel</span>.
+        </p>
+      </section>
+
+      <section class="container why-section" aria-labelledby="why-heading">
+        <h2 id="why-heading">Pourquoi utiliser CheckProtect ?</h2>
+        <div class="why-grid">
+          <article class="why-card">
+            <p class="why-index">01</p>
+            <h3>Détection ciblée</h3>
+            <p>Le scanner identifie les schémas fréquents d'arnaques et met en avant les signaux importants.</p>
+          </article>
+          <article class="why-card">
+            <p class="why-index">02</p>
+            <h3>Explications lisibles</h3>
+            <p>Chaque résultat affiche des raisons simples à comprendre, sans jargon technique.</p>
+          </article>
+          <article class="why-card">
+            <p class="why-index">03</p>
+            <h3>Réaction rapide</h3>
+            <p>Des actions concrètes sont proposées immédiatement pour réduire le risque.</p>
+          </article>
+        </div>
+      </section>
+
       <section id="signalement" class="platform-section container" aria-labelledby="signalement-heading">
-        <h2 id="signalement-heading">Page dédiée au signalement</h2>
-        <p class="section-subtitle">Retrouvez un guide complet pour signaler une arnaque (quoi signaler, sur quelle plateforme, et quelles informations préparer).</p>
-        <a class="btn btn-light" href="signaler.html">Ouvrir la page Signaler</a>
+        <h2 id="signalement-heading">Votre message est une arnaque ?</h2>
+        <p class="section-subtitle">Retrouvez un guide complet pour <span class="critical-text">signaler</span> une arnaque</p>
+        <p class="section-subtitle">(quoi signaler, sur quelle plateforme, et quelles informations préparer).</p>
+        <a class="btn btn-critical" href="signaler.html">Ouvrir la page Signaler</a>
       </section>
 
       <!-- Contact -->
       <section id="contact" class="container contact-section" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact</h2>
-        <p class="explain">Pour suggestions ou signalement : <strong>contact@checkprotect.local</strong></p>
+        <h2 id="contact-heading">Besoin de me contacter ?</h2>
+        <p class="explain">Vous pouvez me contacter via mon adresse e-mail : <strong>guylann.bresson.gb@gmail.com</strong></p>
       </section>
 
     </main>
@@ -111,11 +197,11 @@
         <div>
           <strong>CheckProtect</strong> — Anti-Arnaque Scanner • Gratuit • Aucun compte
         </div>
+        <a class="nav-link" href="https://github.com/nosserb">développé par nosserb</a>
         <div class="footer-note">Outil indicatif — ne remplace pas une enquête professionnelle.</div>
       </div>
     </footer>
 
-    <script src="particles.js" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>
