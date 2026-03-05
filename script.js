@@ -311,6 +311,19 @@
           }
         });
 
+        var prizeBaitWords = ['gagner', 'gagné', 'gagne', 'gain garanti', 'loterie', 'jackpot', 'cadeau gratuit', 'récompense', 'recompense', 'prix à réclamer', 'prix a reclamer'];
+        prizeBaitWords.forEach(function (w) {
+          if (lowered.indexOf(w) !== -1) {
+            score += 18;
+            reasons.push('Promesse de gain/récompense suspecte («' + w + '»).');
+          }
+        });
+
+        if (/(vous\s+avez\s+[eé]t[eé]\s+s[ée]lectionn[ée]e?s?|vous\s+[eé]tes\s+s[ée]lectionn[ée]e?s?|f[ée]licitations[,!\s]*vous\s+avez\s+gagn[ée]|winner|you\s+have\s+been\s+selected)/i.test(txt)) {
+          score += 22;
+          reasons.push('Formulation typique d\'arnaque promotionnelle détectée (« vous avez été sélectionné » / « vous avez gagné »).');
+        }
+
         var amountMatches = txt.match(/(?:\d{1,3}(?:[ .]\d{3})+|\d+)(?:[,.]\d{2})?\s?(?:€|eur)\b/gi);
         if (amountMatches && amountMatches.length) {
           score += Math.min(20, amountMatches.length * 8);
